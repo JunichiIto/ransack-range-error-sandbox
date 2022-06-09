@@ -8,5 +8,6 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal [], User.where(age: 123456789012345678901)
     assert_equal [], User.ransack(age_eq: 123456789012345678901).result
+    #=> ActiveModel::RangeError: 123456789012345678901 is out of range for ActiveRecord::ConnectionAdapters::SQLite3Adapter::SQLite3Integer with limit 8 bytes
   end
 end
